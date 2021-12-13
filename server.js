@@ -52,7 +52,8 @@ if (dotenv.error) {
 if (CLOUDANT_API && CLOUDANT_URL) {
   var Cloudant = require('@cloudant/cloudant');
   // use IAM here
-  cloudant = Cloudant({ url: CLOUDANT_URL, plugins: { iamauth: { iamApiKey: CLOUDANT_API } } });
+//  cloudant = Cloudant({ url: CLOUDANT_URL, plugins: { iamauth: { iamApiKey: CLOUDANT_API } } });
+  cloudant = Cloudant({ url: CLOUDANT_URL, plugins: {} });
   // Create a new "moviesDb" database.
   cloudant.db.create(dbName, function (err, data) {
     if (!err) //err if database doesn't already exists
